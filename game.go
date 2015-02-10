@@ -10,6 +10,9 @@ type Game struct {
 	Guesses        int
 }
 
+// returns the Phrase of the game in a pretty format
+// where guessed letters are shown and unguessed letters
+// are left as underscores
 func (g Game) FormatPhrase() string {
 	formatted := ""
 	for i, _ := range g.Phrase {
@@ -25,6 +28,7 @@ func (g Game) FormatPhrase() string {
 	return formatted
 }
 
+// creates a new Game struct, uppercases the phrase given
 func NewGame(phrase string) Game {
 	return Game{
 		GuessedLetters: "",

@@ -5,10 +5,13 @@ import (
 	"strings"
 )
 
+// returns true if letter is uppercase A-Z
 func isLetter(letter string) bool {
 	return letter[0] >= 65 && letter[0] <= 90
 }
 
+// prompt user for a single letter(a-z/A-Z) until a valid input is given
+// takes in a string pointer that the input is set to
 func getInput(input *string) {
 	fmt.Print("> ")
 	fmt.Scanln(input)
@@ -19,6 +22,7 @@ func getInput(input *string) {
 	}
 }
 
+// welcomes the player to hangman
 func welcomeMessage() {
 	fmt.Println("Welcome to hangman, here's your phrase to guess:")
 }
@@ -30,12 +34,5 @@ func main() {
 	welcomeMessage()
 	fmt.Println(hangman.FormatPhrase())
 	getInput(&input)
-	// fmt.Println("H _ _ _ _   _ _ _ _ _")
-	// fmt.Println("H _ _ _ _   _ _ _ _ _")
-	// fmt.Println("H E _ _ _   _ _ _ _ _")
-	// fmt.Println("H E L L _   _ _ _ L _")
-	// fmt.Println("H E L L O   _ O _ L _")
-	// fmt.Println("H E L L O   W O _ L _")
-	// fmt.Println("H E L L O   W O R L _")
 	fmt.Println("YOU WIN!")
 }
